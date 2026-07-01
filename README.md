@@ -2,6 +2,10 @@
 
 Tank Tank Bot is a RAG learning assistant for AIO 2026 learning materials. The repository keeps the original baseline implementation for comparison and the upgraded Streamlit app for deployment.
 
+Baseline Link Demo: 
+
+Upgrade Link Demo: https://tank-tank-rag-bot-learning-assistant-n69xd3y5fj8twkik8n3dtm.streamlit.app/
+
 ## Project Structure
 
 - `baseline/`: reference PDF RAG chatbot version.
@@ -36,7 +40,3 @@ NOTION_DATABASE_ID
 
 Use `.env.example` as the local configuration template.
 
-## Notes
-
-- Do not commit `.env`, Streamlit secrets, ChromaDB folders, logs, or cache files.
-- On Streamlit Cloud, rebuild the index from the app UI with `Sync Notion` or `Index PDF` after deployment.
