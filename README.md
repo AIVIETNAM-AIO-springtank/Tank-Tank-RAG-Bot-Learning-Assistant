@@ -6,6 +6,19 @@ Baseline Link Demo: https://aio-2026-rag-learning-assistant-8eyegmdv2f2vdkewm8kc
 
 Upgrade Link Demo: https://tank-tank-rag-bot-learning-assistant-n69xd3y5fj8twkik8n3dtm.streamlit.app/
 
+<p align="center">
+  <img src="docs/assets/image06.png" alt="Giao diện chính" width="600">
+  <br>
+  <em>UPGRADE ARCHITECTURE</em>
+</p>
+
+
+<p align="center">
+  <img src="docs/assets/image05.png" alt="Giao diện chính" width="600">
+  <br>
+  <em>BASELINE ARCHITECTURE</em>
+</p>
+
 ## Project Structure
 
 - `baseline/`: reference PDF RAG chatbot version.
