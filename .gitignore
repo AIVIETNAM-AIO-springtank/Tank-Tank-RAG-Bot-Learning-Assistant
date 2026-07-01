@@ -1,0 +1,39 @@
+# Environment and secrets
+.env
+.env.*
+!.env.example
+
+# Python caches and virtual environments
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+env/
+# Streamlit local secrets
+**/.streamlit/secrets.toml
+
+# RAG/vector database artifacts
+chroma_db/
+*.chroma/
+sync_state.json
+upgrade_new/sync_state.json
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.temp
+*.log
+
+# OS/editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Local installers and generated large artifacts
+OllamaSetup.exe

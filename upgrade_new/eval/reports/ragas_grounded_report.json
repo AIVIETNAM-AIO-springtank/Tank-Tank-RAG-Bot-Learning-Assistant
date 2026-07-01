@@ -1,0 +1,676 @@
+{
+  "report_type": "pipeline_comparison",
+  "generated_at": "2026-06-28T09:16:32.875111+00:00",
+  "testset_path": "upgrade_new\\eval\\testset.grounded.jsonl",
+  "sample_count": 6,
+  "metrics": [
+    "faithfulness",
+    "answer_relevancy",
+    "context_precision",
+    "context_recall"
+  ],
+  "runs": [
+    {
+      "report_type": "single_pipeline",
+      "generated_at": "2026-06-28T09:16:32.875111+00:00",
+      "sample_count": 6,
+      "metrics": [
+        "faithfulness",
+        "answer_relevancy",
+        "context_precision",
+        "context_recall"
+      ],
+      "config": {
+        "pipeline_name": "vector",
+        "pipeline_label": "Vector only",
+        "retrieval_mode": "vector",
+        "candidate_k": 20,
+        "top_k": 4,
+        "rerank_enabled": false,
+        "rerank_provider": "cohere",
+        "rerank_top_n": 10,
+        "mmr_enabled": false,
+        "mmr_lambda": 0.65,
+        "final_context_k": 4,
+        "use_ragas": true,
+        "request_delay_seconds": 2.0,
+        "retry_attempts": 1,
+        "retry_delay_seconds": 8.0,
+        "generate_answers": true,
+        "ragas_batch_size": 1,
+        "ragas_delay_seconds": 2.0,
+        "ragas_retry_attempts": 1,
+        "ragas_retry_delay_seconds": 8.0,
+        "ragas_judge_model": "command-r7b-12-2024"
+      },
+      "records": [
+        {
+          "sample_id": "python_birth_year",
+          "question": "Python ra đời năm nào và do ai thiết kế?",
+          "answer": "Python ra đời năm 1991, do Guido van Rossum thiết kế.",
+          "error": "",
+          "attempt_count": 1,
+          "generation_skipped": false,
+          "ground_truth": "Python ra đời năm 1991 và được thiết kế bởi Guido van Rossum.",
+          "expected_source_notes": "Should cite Basic Python introduction chunks mentioning 1991 and Guido van Rossum.",
+          "tags": [
+            "notion",
+            "python",
+            "fact"
+          ],
+          "contexts": [
+            "1. Giới thiệu về Python\n- Lịch sử : Python ra đời năm 1991, được thiết kế bởi Guido van Rossum với triết lý dễ đọc, dễ học. Sự bùng nổ của Python diễn ra mạnh mẽ trong hơn một thập kỷ gần đây nhờ làn sóng AI, Machine Learning và Data Mining.\n\n- Tại sao chọn Python? : So với C++, Java hay Lua, Python có cú pháp đơn giản, không cần quản lý bộ nhớ thủ công, giúp nhà nghiên cứu tập trung vào bài toán cốt lõi.\n\n- Các thư viện phổ biến :\n\n- Học máy/Học sâu: TensorFlow, PyTorch, Keras, Scikit-learn.\n\n- Xử lý dữ liệu: NumPy, Pandas.\n\n- Trực quan hóa: Matplotlib, Plotly.\n\n- Xử lý ngôn ngữ tự nhiên (NLP): NLTK, spaCy, Gensim.\n\n---",
+            "1.1 Lịch sử và sự phát triển\n- Python ra đời năm 1991 (tính đến nay đã hơn 30 năm). Ban đầu nó được thiết kế với triết lý dễ đọc, dễ học.\n\n- Sự bùng nổ của Python diễn ra mạnh mẽ trong hơn một thập kỷ gần đây nhờ sự phát triển của làn sóng AI, Machine Learning (Học máy) và Data Mining (Khai phá dữ liệu).\n\n- Tại sao lại học code Python mà không phải ngôn ngữ khác?\n\n- So với các ngôn ngữ truyền thống như C++, Java, hay Lua, Python mang lại cú pháp đơn giản, người lập trình không cần quản lý bộ nhớ thủ công phức tạp (không phải cấp phát tĩnh/động thủ công), giúp các nhà nghiên cứu và kỹ sư dữ liệu tập trung hoàn toàn vào việc giải quyết bài toán cốt lõi.",
+            "Phần 2: Pythonic Code\nPythonic là việc tận dụng tối đa các đặc trưng riêng biệt của Python để viết code ngắn gọn, hiệu quả và đúng phong cách.\n\n- The Zen of Python (PEP 20) : Triết lý thiết kế Python với các nguyên tắc như: \"Đẹp tốt hơn xấu\", \"Rõ ràng tốt hơn ẩn ý\", \"Đơn giản tốt hơn phức tạp\".\n\n- Comprehensions : Sử dụng List/Dictionary Comprehensions để tạo cấu trúc dữ liệu trên một dòng, thường nhanh và dễ đọc hơn vòng lặp truyền thống.\n\n- Context Managers ( with ) : Tự động quản lý và giải phóng tài nguyên (file, kết nối database, API) ngay cả khi có lỗi xảy ra.\n\n- So sánh & Điều kiện phong cách Pythonic :\n\n- Dùng  is None  thay vì  == None .\n\n- Kiểm tra container rỗng trực tiếp ( if items: ) thay vì check độ dài.\n\n- Dùng  in  để kiểm tra thành viên.\n\n- Sử dụng so sánh chuỗi (Chaining comparison):  0 <= score <= 100 .\n\n- Quy ước Dấu gạch dưới (Underscore) :\n\n- _var : Sử dụng nội bộ.\n\n- __var : Tránh truy cập từ ngoài class.\n\n- __var__ : Các phương thức đặc biệt (Dunder methods).",
+            "1.2 Hệ sinh thái và Tư duy học tập\n- Hệ sinh thái đa dạng : Python có kho thư viện khổng lồ (Ecosystem). Trong lĩnh vực AI, các framework liên tục thay đổi (ví dụ: cộng đồng chuyển dịch từ TensorFlow sang PyTorch, Hugging Face). Do đó, cần có tư duy linh hoạt, sẵn sàng thích nghi và coi Python như một công cụ.\n\n- Tư duy học : Đừng cố gắng \"học thuộc lòng\" mọi cú pháp. Hãy học cách phân tích và \"ánh xạ\" tư duy toán học, logic rẽ nhánh vào máy tính. Kỹ năng lập trình chỉ thực sự lên tay khi bạn tự \"cắn răng\" suy nghĩ và giải quyết lỗi lầm (dành 2-3 tuần giải bài tập liên tục để hình thành thói quen)."
+          ],
+          "source_ids": [
+            "37f57411-9086-81bf-94c1-dc384eec22bd_lesson_content_chunk_0",
+            "37f57411-9086-8152-a76d-fdc4d33bc22c_lesson_content_chunk_1",
+            "37f57411-9086-819d-9787-c85c309ea654_lesson_content_chunk_4",
+            "37f57411-9086-8152-a76d-fdc4d33bc22c_lesson_content_chunk_2"
+          ],
+          "source_titles": [
+            "Notion:Mix thứ 4 và thứ 6:heading=PHẦN I: NỀN TẢNG PYTHON (Buổi Thứ 4 — Basic Python) > 1. Giới thiệu về Python:id=37f57411-9086-81bf-94c1-dc384eec22bd_lesson_content_chunk_0",
+            "Notion:M01W01 - Basic Python (Branching~Rule-based Chatbot):heading=SECTION 1: INTRODUCTION (GIỚI THIỆU VỀ PYTHON) > 1.1 Lịch sử và sự phát triển:id=37f57411-9086-8152-a76d-fdc4d33bc22c_lesson_content_chunk_1",
+            "Notion:M01W02 - Coding Methodology:heading=Phần 0: Tại sao Methodology quan trọng? > Phần 2: Pythonic Code:id=37f57411-9086-819d-9787-c85c309ea654_lesson_content_chunk_4",
+            "Notion:M01W01 - Basic Python (Branching~Rule-based Chatbot):heading=SECTION 1: INTRODUCTION (GIỚI THIỆU VỀ PYTHON) > 1.2 Hệ sinh thái và Tư duy học tập:id=37f57411-9086-8152-a76d-fdc4d33bc22c_lesson_content_chunk_2"
+          ],
+          "retrieval_debug": {
+            "retrieved_count": 20,
+            "reranked_count": 20,
+            "final_count": 4,
+            "rerank_enabled": false,
+            "mmr_enabled": false
+          },
+          "ragas": {
+            "faithfulness": 1.0,
+            "answer_relevancy": 0.7497205110975499,
+            "context_precision": 0.99999999995,
+            "context_recall": 1.0
+          }
+        },
+        {
+          "sample_id": "for_while_loop_compare",
+          "question": "So sánh ngắn gọn vòng lặp for và while trong Python.",
+          "answer": "Vòng lặp `for` và `while` là hai cấu trúc lặp phổ biến trong Python, nhưng có những khác biệt quan trọng:\n\n- **Duyệt List**: `for` thường được sử dụng để duyệt qua các phần tử trong một List, trong khi `while` có thể được sử dụng cho các điều kiện khác.\n- **Duyệt theo giá trị (Value-based)**: `for` duyệt theo giá trị của List, trong khi `while` có thể được sử dụng cho các điều kiện logic.\n- **Duyệt theo chỉ số (Index-based)**: `for` có thể duyệt theo chỉ số của List, trong khi `while` có thể được sử dụng cho các điều kiện logic.\n- **Số lần lặp**: `for` biết trước số lần lặp, trong khi `while` không cần biết trước số lần lặp.\n- **Rủi ro**: `for` ít có nguy cơ lặp vô tận, trong khi `while` có thể lặp vô tận nếu điều kiện không được quản lý tốt.\n- **Dễ hiểu**: `for` thường ngắn gọn và dễ hiểu hơn so với `while`.\n\nTóm lại, `for` là cấu trúc lặp phổ biến nhất và thường được sử dụng cho các trường hợp thông thường, trong khi `while` có thể được sử dụng cho các điều kiện logic và điều kiện không biết trước số lần lặp.",
+          "error": "",
+          "attempt_count": 1,
+          "generation_skipped": false,
+          "ground_truth": "For thường dùng khi biết trước số lần lặp hoặc duyệt qua iterable và tự quản lý biến đếm qua range; while lặp khi điều kiện còn đúng, thường dùng khi chưa biết trước số lần lặp và cần tự quản lý điều kiện dừng.",
+          "expected_source_notes": "Should cite For Loop & While Loop chunks.",
+          "tags": [
+            "notion",
+            "python",
+            "loop",
+            "comparison"
+          ],
+          "contexts": [
+            "7.2. So sánh  for  vs  while\n[Table]\n\n| Tiêu chí | for | while |\n\n| Biến đếm | Tự động quản lý qua  range() | Phải  tự khởi tạo  và  tự tăng/giảm |\n\n| Số lần lặp | Biết trước | Không cần biết trước |\n\n| Rủi ro | Ít | Quên tăng/giảm biến → lặp vô tận |\n\n---",
+            "6. Duyệt List với Vòng lặp For\nCó hai cách tiếp cận chính kết hợp giữa List và vòng For:\n\n- Cách 1: Duyệt theo giá trị (Value-based)\n\n```python\nfor element in data:\n      # Xử lý nội bộ với biến element\n```\n\n- Bản chất bộ nhớ:  Biến  element  chỉ nhận tham chiếu vào giá trị. Do đó, nếu bạn có lệnh  element = 5  trong vòng for, nó KHÔNG hề làm thay đổi List gốc  data .\n\n- Cách 2: Duyệt qua chỉ số (Index-based)\n\n```python\nfor i in range(len(data)):\n      # Thao tác qua data[i]\n```\n\n- Bản chất:  Ở cách này bạn đang nắm trực tiếp địa chỉ phần tử trong List. Mọi thao tác gán  data[i] = 5  sẽ làm THAY ĐỔI trực tiếp List gốc.\n\nMẫu thuật toán \"Map\" kinh điển :\n\n- Thường ta tạo một danh sách rỗng để hứng kết quả:  result = [] .\n\n- Dùng vòng lặp For duyệt qua danh sách gốc.\n\n- Áp dụng công thức, sau đó gắn đuôi vào danh sách mới:  result.append(giá_trị_mới) .\n\n---",
+            "6. Vòng lặp  for\nVòng lặp  for  là cấu trúc lặp phổ biến nhất (chiếm ~99% trường hợp). Những gì  for  làm được thì  while  cũng làm được, nhưng  for  thường ngắn gọn và dễ hiểu hơn.",
+            "7.1. Cú pháp\n- while <điều_kiện>:  — Lặp chừng nào điều kiện còn  True . Khi  False  → kết thúc.\n\n- Vòng lặp vô tận :  while True:  — Chạy mãi mãi (VD: camera an ninh). Phải dùng  break  để ngắt."
+          ],
+          "source_ids": [
+            "37f57411-9086-81bf-94c1-dc384eec22bd_lesson_content_chunk_23",
+            "37f57411-9086-8181-9936-ea4222fad368_lesson_content_chunk_7",
+            "37f57411-9086-81bf-94c1-dc384eec22bd_lesson_content_chunk_17",
+            "37f57411-9086-81bf-94c1-dc384eec22bd_lesson_content_chunk_22"
+          ],
+          "source_titles": [
+            "Notion:Mix thứ 4 và thứ 6:heading=PHẦN II: VÒNG LẶP (Buổi Thứ 6 — For Loop & While Loop) > 7. Vòng lặp  while > 7.2. So sánh  for  vs  while:id=37f57411-9086-81bf-94c1-dc384eec22bd_lesson_content_chunk_23",
+            "Notion:M01W02 - Data Structure (List; Data Cleaning):heading=SECTION 1: 1D List (List 1 chiều) > 6. Duyệt List với Vòng lặp For:id=37f57411-9086-8181-9936-ea4222fad368_lesson_content_chunk_7",
+            "Notion:Mix thứ 4 và thứ 6:heading=PHẦN II: VÒNG LẶP (Buổi Thứ 6 — For Loop & While Loop) > 6. Vòng lặp  for:id=37f57411-9086-81bf-94c1-dc384eec22bd_lesson_content_chunk_17",
+            "Notion:Mix thứ 4 và thứ 6:heading=PHẦN II: VÒNG LẶP (Buổi Thứ 6 — For Loop & While Loop) > 7. Vòng lặp  while > 7.1. Cú pháp:id=37f57411-9086-81bf-94c1-dc384eec22bd_lesson_content_chunk_22"
+          ],
+          "retrieval_debug": {
+            "retrieved_count": 20,
+            "reranked_count": 20,
+            "final_count": 4,
+            "rerank_enabled": false,
+            "mmr_enabled": false
+          },
+          "ragas": {
+            "faithfulness": 1.0,
+            "answer_relevancy": 0.6816140186424947,
+            "context_precision": 0.999999999975,
+            "context_recall": 1.0
+          }
+        },
+        {
+          "sample_id": "erd_components",
+          "question": "ERD có những thành phần chính nào?",
+          "answer": "ERD có các thành phần chính sau:\n\n- Thực thể (Entity): Đối tượng cụ thể có thật dùng để chứa dữ liệu. Khi cài đặt vào CSDL, mỗi thực thể thường trở thành một Bảng (Table).\n\n-Thuộc tính (Attribute): Các thông tin mô tả thực thể. Khi cài đặt, mỗi thuộc tính sẽ map thành một Cột (Column) trong Bảng.\n\n-Mối quan hệ (Relationship): Mối quan hệ giữa các thực thể.\n\n- Các loại kết nối (Cardinality): 1:1, 1:N, N:N.",
+          "error": "",
+          "attempt_count": 1,
+          "generation_skipped": false,
+          "ground_truth": "ERD gồm các thành phần như thực thể, thuộc tính, thuộc tính khóa, mối quan hệ, bản số quan hệ và ràng buộc tham gia; quan hệ nhiều-nhiều thường cần bảng trung gian.",
+          "expected_source_notes": "Should cite Data Extraction/Retrieval Using SQL ERD section.",
+          "tags": [
+            "notion",
+            "sql",
+            "erd"
+          ],
+          "contexts": [
+            "2. Các thành phần chính trong ERD\n- M:N (Nhiều - Nhiều): Thường phải tách ra thành bảng trung gian (Thực thể kết hợp).\n\n- Ràng buộc tham gia (Participation Constraints):\n\n- Total Participation (Tham gia toàn bộ):  Mọi thực thể bắt buộc phải tham gia quan hệ (ký hiệu nét liền đôi). VD: Một chương sách bắt buộc phải thuộc về một quyển sách, hoặc sinh viên bắt buộc phải có giảng viên hướng dẫn.\n\n- Partial Participation (Tham gia một phần):  Không bắt buộc tham gia toàn bộ (ký hiệu nét liền đơn). VD: Giảng viên có thể chưa hướng dẫn sinh viên nào.",
+            "2. Các thành phần chính trong ERD\n- Key Attribute (Thuộc tính khóa):  Dùng để định danh duy nhất (Primary Key). Có thể là khóa đơn (VD:  customer_id ) hoặc khóa kết hợp (Composite Key - VD:  customer_id  +  product_id ). Khóa chính đóng vai trò như một index, giúp tìm kiếm (search) giữa hàng triệu record cực kỳ nhanh.\n\n- Simple Attribute (Thuộc tính đơn giản):  Thuộc tính thông thường.\n\n- Composite Attribute (Thuộc tính phức hợp):  Bao gồm nhiều thành phần cấu tạo thành (VD:  Address  gồm đường, phường, quận, thành phố...).\n\n- Multivalued Attribute (Thuộc tính đa trị):  Một thực thể có thể có nhiều giá trị cho thuộc tính này (VD: Một khách hàng có nhiều  số điện thoại ).\n\n- Derived Attribute (Thuộc tính suy diễn):  Có thể tính toán/suy ra từ các thông tin khác trong hệ thống (VD:  Tuổi  được suy ra từ  Ngày sinh ).\n\nC. Mối quan hệ (Relationship) và Ràng buộc\n\n- Các loại kết nối (Cardinality):\n\n- 1:1 (Một - Một).\n\n- 1:N (Một - Nhiều): Phổ biến nhất.",
+            "2. Các thành phần chính trong ERD\nA. Thực thể (Entity)\n\nĐối tượng cụ thể có thật dùng để chứa dữ liệu. Khi cài đặt vào CSDL, mỗi thực thể thường trở thành một  Bảng (Table) .\n\n- Thực thể độc lập (Strong Entity):  Tồn tại độc lập, không phụ thuộc vào bảng khác (VD:  Khách hàng ,  Sản phẩm ).\n\n- Thực thể yếu (Weak Entity):  Phụ thuộc vào thực thể khác để tồn tại. (VD:  Chi tiết đơn hàng  không thể tồn tại nếu không có thông tin của  Đơn hàng ).\n\n- Thực thể kết hợp (Associative Entity):  Một bảng trung gian được sinh ra để bẻ gãy mối quan hệ Nhiều - Nhiều (N:N) giữa hai thực thể thành hai mối quan hệ Một - Nhiều (1:N). (VD: Bảng  order_detail  nằm giữa bảng  order  và bảng  product ).\n\nB. Thuộc tính (Attribute)\n\nLà các thông tin mô tả thực thể. Khi cài đặt, mỗi thuộc tính sẽ map thành một  Cột (Column)  trong Bảng.",
+            "1. Định nghĩa và Mục đích\nERD  là một sơ đồ biểu diễn trực quan cấu trúc logic của cơ sở dữ liệu, thể hiện các thực thể (entities) khác nhau trong hệ thống và mối quan hệ giữa chúng.\n\nMục đích:  Trong thực tế doanh nghiệp, dữ liệu cần được tổ chức chặt chẽ và chuẩn hóa để tránh dư thừa (redundancy). ERD đóng vai trò như một \"bản thiết kế\" trước khi cài đặt thực tế vào các hệ quản trị CSDL (như MySQL, PostgreSQL). Bước thiết kế này chiếm một phần quan trọng (60 - 70% thời gian xử lý dữ liệu) để đảm bảo quá trình truy vấn và làm sạch dữ liệu sau này diễn ra trơn tru."
+          ],
+          "source_ids": [
+            "37f57411-9086-811f-bc4f-c45644fde64d_lesson_content_chunk_3",
+            "37f57411-9086-811f-bc4f-c45644fde64d_lesson_content_chunk_2",
+            "37f57411-9086-811f-bc4f-c45644fde64d_lesson_content_chunk_1",
+            "37f57411-9086-811f-bc4f-c45644fde64d_lesson_content_chunk_0"
+          ],
+          "source_titles": [
+            "Notion:M01W02 - Data Extraction/Retrieval Using SQL:heading=I. Giới thiệu về Lược đồ Mối quan hệ Thực thể (Entity Relationship Diagram - ERD) > 2. Các thành phần chính trong ERD:id=37f57411-9086-811f-bc4f-c45644fde64d_lesson_content_chunk_3",
+            "Notion:M01W02 - Data Extraction/Retrieval Using SQL:heading=I. Giới thiệu về Lược đồ Mối quan hệ Thực thể (Entity Relationship Diagram - ERD) > 2. Các thành phần chính trong ERD:id=37f57411-9086-811f-bc4f-c45644fde64d_lesson_content_chunk_2",
+            "Notion:M01W02 - Data Extraction/Retrieval Using SQL:heading=I. Giới thiệu về Lược đồ Mối quan hệ Thực thể (Entity Relationship Diagram - ERD) > 2. Các thành phần chính trong ERD:id=37f57411-9086-811f-bc4f-c45644fde64d_lesson_content_chunk_1",
+            "Notion:M01W02 - Data Extraction/Retrieval Using SQL:heading=I. Giới thiệu về Lược đồ Mối quan hệ Thực thể (Entity Relationship Diagram - ERD) > 1. Định nghĩa và Mục đích:id=37f57411-9086-811f-bc4f-c45644fde64d_lesson_content_chunk_0"
+          ],
+          "retrieval_debug": {
+            "retrieved_count": 20,
+            "reranked_count": 20,
+            "final_count": 4,
+            "rerank_enabled": false,
+            "mmr_enabled": false
+          },
+          "ragas": {
+            "faithfulness": 1.0,
+            "answer_relevancy": 0.6360851902338857,
+            "context_precision": 0.999999999975,
+            "context_recall": 0.5
+          }
+        },
+        {
+          "sample_id": "nlp_tasks",
+          "question": "Các tác vụ NLP phổ biến trong phần Text Data là gì?",
+          "answer": "Các tác vụ NLP phổ biến trong phần Text Data bao gồm:\n\n- Phân loại văn bản (Text Classification)\n- Tóm tắt văn bản (Text Summarization)\n- Conversational AI (AI Hội thoại)",
+          "error": "",
+          "attempt_count": 1,
+          "generation_skipped": false,
+          "ground_truth": "Các tác vụ NLP phổ biến gồm phân loại văn bản, phân tích cảm xúc, nhận dạng thực thể, dịch máy, tóm tắt văn bản và hỏi đáp hoặc các tác vụ xử lý ngôn ngữ tự nhiên tương tự được nêu trong bài Text Data.",
+          "expected_source_notes": "Should cite Text and Audio Data natural language tasks section.",
+          "tags": [
+            "notion",
+            "text-data",
+            "nlp"
+          ],
+          "contexts": [
+            "8. Các tác vụ Ngôn ngữ Tự nhiên (Natural Language Tasks)\n- Phân loại văn bản (Text Classification):  Ví dụ như phân loại Email xem có phải là SPAM hay không, hoặc phân loại các đánh giá sách (Book Reviews) thành Positive (Tích cực), Neutral (Trung tính), Negative (Tiêu cực).\n\n- Tóm tắt văn bản (Text Summarization):  Chuyển đổi một đoạn văn bản dài thành một đoạn tóm tắt ngắn gọn. Các mô hình như T5 có thể xử lý đa nhiệm (dịch thuật, kiểm tra ngữ pháp, tính điểm tương đồng, và tóm tắt).\n\n- Conversational AI (AI Hội thoại):  Các hệ thống có khả năng tương tác với người dùng thông qua hội thoại (Voice hoặc Text).\n\n---",
+            "7. Từ Văn bản đến Mô hình AI (From Text to AI Models)\n- Quy trình:   Raw text  ->  Unicode / UTF-8  ->  Tokenization  ->  Numerical IDs  ->  Embeddings  ->  NLP model .\n\n- Các tác vụ đầu ra ví dụ (Example Output Tasks):\n\n- Phân loại văn bản (Text classification)\n\n- Phân tích cảm xúc (Sentiment analysis)\n\n- Dịch thuật (Translation)\n\n- Trả lời câu hỏi (Question answering)\n\n- Tóm tắt văn bản (Summarization)\n\n- Chatbot",
+            "2.6. Ứng dụng Set trong Text Classification (Phân tích thực tế)\nDựa trên hình ảnh từ slide, quá trình phân loại văn bản (Text Classification) ứng dụng  Set  diễn ra cực kỳ trực quan như sau:\n\n1. Xây dựng từ vựng (Vocabulary Building) : Dữ liệu văn bản thô (Text data) được đưa qua một chương trình Python sử dụng cấu trúc  Set . Set sẽ tự động loại bỏ các từ trùng lặp để tạo ra một từ điển (Vocabulary) mà mỗi từ là duy nhất và được đánh một index số học (Ví dụ:  ai  -> 2,  learning  -> 5).\n\n1. Chuyển đổi văn bản thành Vector (Standardization & Vectorization) : Câu văn ban đầu (ví dụ:  \"We are learning AI\" ) sẽ được đối chiếu với Vocabulary để biến thành một mảng số tự nhiên  [3, 1, 5, 2] . Nhờ vậy máy tính có thể hiểu được chữ viết.\n\n1. Mô hình học máy (Machine Learning Algorithm) : Các vector số này (Embedding features) tiếp tục đi qua thuật toán học máy (như Support Vector Machine - SVM) để dự đoán ra kết quả cuối cùng (Ví dụ: Phân loại email Spam hay không Spam).\n\n---",
+            "1. Mục tiêu bài học (Objectives)\n- Dữ liệu văn bản (Text Data):\n\n- Hiểu cách dữ liệu văn bản được thu thập và biểu diễn trong máy tính.\n\n- Áp dụng các bước tiền xử lý cốt lõi: phân tích từ (tokenization), làm sạch (cleaning), và chuẩn hóa (normalization).\n\n- Khám phá các ứng dụng của Xử lý ngôn ngữ tự nhiên (NLP) và nhúng từ (word embeddings).\n\n- Dữ liệu âm thanh (Audio Data):\n\n- Hiểu các tín hiệu âm thanh dưới dạng sóng (waveforms) và phổ đồ (spectrograms).\n\n- Tìm hiểu về lấy mẫu (sampling), các đặc trưng chính (MFCCs) và xử lý âm thanh.\n\n- Khám phá các bài toán nhận dạng giọng nói và phân loại âm thanh."
+          ],
+          "source_ids": [
+            "37f57411-9086-81bc-a0b1-d87d4ff71ae1_lesson_content_chunk_13",
+            "37f57411-9086-81bc-a0b1-d87d4ff71ae1_lesson_content_chunk_12",
+            "37f57411-9086-81c3-88f7-cccd8239fcb8_lesson_content_chunk_10",
+            "37f57411-9086-81bc-a0b1-d87d4ff71ae1_lesson_content_chunk_0"
+          ],
+          "source_titles": [
+            "Notion:M01W03 - Text and Audio Data:heading=II. Text Data > 8. Các tác vụ Ngôn ngữ Tự nhiên (Natural Language Tasks):id=37f57411-9086-81bc-a0b1-d87d4ff71ae1_lesson_content_chunk_13",
+            "Notion:M01W03 - Text and Audio Data:heading=II. Text Data > 7. Từ Văn bản đến Mô hình AI (From Text to AI Models):id=37f57411-9086-81bc-a0b1-d87d4ff71ae1_lesson_content_chunk_12",
+            "Notion:M01W02 - Data Structure (Dictionary and Histogram):heading=Section 2: Set > 2.6. Ứng dụng Set trong Text Classification (Phân tích thực tế):id=37f57411-9086-81c3-88f7-cccd8239fcb8_lesson_content_chunk_10",
+            "Notion:M01W03 - Text and Audio Data:heading=I. Introduction > 1. Mục tiêu bài học (Objectives):id=37f57411-9086-81bc-a0b1-d87d4ff71ae1_lesson_content_chunk_0"
+          ],
+          "retrieval_debug": {
+            "retrieved_count": 20,
+            "reranked_count": 20,
+            "final_count": 4,
+            "rerank_enabled": false,
+            "mmr_enabled": false
+          },
+          "ragas": {
+            "faithfulness": 1.0,
+            "answer_relevancy": 0.7482081458952493,
+            "context_precision": 0.9166666666361111,
+            "context_recall": 1.0
+          }
+        },
+        {
+          "sample_id": "tree_applications",
+          "question": "Tree được ứng dụng ở đâu trong khoa học máy tính?",
+          "answer": "Tree được ứng dụng trong nhiều khía cạnh của khoa học máy tính, bao gồm:\n\n- **File Explorer**: Hệ thống quản lý file/thư mục trên máy tính được tổ chức dạng cây.\n- **Database**: Các hệ quản trị cơ sở dữ liệu dùng Tree để tối ưu việc lập chỉ mục (indexing).\n- **HTML DOM**: Giao diện của trang web (DOM Tree) với các thẻ lồng nhau.\n- **Machine Learning & AI**: Sử dụng rất nhiều trong thuật toán Decision Tree (Cây quyết định).\n- **K-D Tree**: Dùng để chia không gian đa chiều, ứng dụng nhiều trong tìm kiếm điểm lân cận gần nhất (nearest neighbor).",
+          "error": "",
+          "attempt_count": 1,
+          "generation_skipped": false,
+          "ground_truth": "Tree được dùng trong các hệ thống dạng phân cấp như File Explorer, cơ sở dữ liệu, DOM/HTML, trình biên dịch hoặc các cấu trúc tìm kiếm và tổ chức dữ liệu phân cấp.",
+          "expected_source_notes": "Should cite Graph and Tree applications section.",
+          "tags": [
+            "notion",
+            "data-structure",
+            "tree"
+          ],
+          "contexts": [
+            "7. Các ứng dụng của Tree (Tree Applications)\nTree được ứng dụng rất rộng rãi trong khoa học máy tính:\n\n- File Explorer:  Hệ thống quản lý file/thư mục trên máy tính được tổ chức dạng cây.\n\n- Database:  Các hệ quản trị cơ sở dữ liệu dùng Tree để tối ưu việc lập chỉ mục (indexing).\n\n- HTML DOM:  Giao diện của trang web (DOM Tree) với các thẻ lồng nhau.\n\n- Machine Learning & AI:  Sử dụng rất nhiều trong thuật toán Decision Tree (Cây quyết định).\n\n- K-D Tree (K-Dimensional Tree):  Dùng để chia không gian đa chiều, ứng dụng nhiều trong tìm kiếm điểm lân cận gần nhất (nearest neighbor).\n\n[Image: image block]\n\n[Image: image block]\n\n[Image: image block]",
+            "2. Tại sao nên sử dụng Tree?\nCác cấu trúc dữ liệu khác như mảng (Arrays) hoặc danh sách liên kết (Linked Lists) là các cấu trúc dữ liệu tuyến tính (linear data structures). Chúng lưu trữ dữ liệu một cách tuần tự. Vấn đề xảy ra khi chúng ta muốn tìm kiếm một phần tử (ví dụ: kiểm tra xem số 8 có tồn tại trong danh sách không). Với mảng, ta phải duyệt qua từng phần tử một từ đầu đến cuối, việc này không hiệu quả nếu danh sách rất lớn.\n\n[Image: image block]\n\nChính vì vậy, chúng ta cần một cấu trúc dữ liệu mới hỗ trợ việc tìm kiếm hiệu quả hơn, đó chính là Tree.\n\nSự hiệu quả của Tree đến từ quy tắc tổ chức dữ liệu của nó (đặc biệt là trong Binary Search Tree - Cây tìm kiếm nhị phân):\n\nLeft subtree values < Node Value < Right subtree values  (Giá trị cây con bên trái < Giá trị nút hiện tại < Giá trị cây con bên phải).\n\nNhờ quy tắc này, thay vì phải duyệt toàn bộ, ta chỉ cần rẽ trái hoặc phải tùy theo giá trị cần tìm, giúp giảm đáng kể thời gian tìm kiếm.",
+            "4. Định nghĩa chi tiết về Tree\nTree là một cấu trúc dữ liệu phi tuyến tính (non-linear data structure), trong đó các nút (nodes) được tổ chức theo một hệ thống phân cấp (hierarchy).\n\n[Image: image block]",
+            "VII. Summary (Tổng kết)\n- Tree (Cây):  Cấu trúc dữ liệu phân cấp tuyến tính (Ví dụ: Binary Tree, Binary Search Tree). Phù hợp cho việc tổ chức dữ liệu có thứ bậc, dễ dàng tìm kiếm (như BST).\n\n- Graph (Đồ thị):  Cấu trúc mạng lưới phức tạp hơn Tree, chứa các Nút và Cạnh (Có hướng/Vô hướng, Có trọng số/Không trọng số).\n\n- Duyệt (Traversal):\n\n- DFS (Depth-First Search):  Đi sâu nhất có thể, dùng đệ quy hoặc  Stack (LIFO) .\n\n- BFS (Breadth-First Search):  Duyệt theo từng tầng/lớp, bắt buộc dùng  Queue (FIFO) .\n\n- Stack & Queue:  Là các cấu trúc dữ liệu cơ bản quan trọng, không chỉ dùng để duyệt cây/đồ thị mà còn ứng dụng rộng rãi trong lập trình thực tế (Quản lý bộ nhớ, History Browser, Task Scheduling, v.v...)."
+          ],
+          "source_ids": [
+            "37f57411-9086-81b7-bbcb-f364da72863e_lesson_content_chunk_8",
+            "37f57411-9086-81b7-bbcb-f364da72863e_lesson_content_chunk_1",
+            "37f57411-9086-81b7-bbcb-f364da72863e_lesson_content_chunk_3",
+            "37f57411-9086-81b7-bbcb-f364da72863e_lesson_content_chunk_32"
+          ],
+          "source_titles": [
+            "Notion:M01W03 - Data Structure (Graph and Tree):heading=I. What is a Tree Data Structure > 7. Các ứng dụng của Tree (Tree Applications):id=37f57411-9086-81b7-bbcb-f364da72863e_lesson_content_chunk_8",
+            "Notion:M01W03 - Data Structure (Graph and Tree):heading=I. What is a Tree Data Structure > 2. Tại sao nên sử dụng Tree?:id=37f57411-9086-81b7-bbcb-f364da72863e_lesson_content_chunk_1",
+            "Notion:M01W03 - Data Structure (Graph and Tree):heading=I. What is a Tree Data Structure > 4. Định nghĩa chi tiết về Tree:id=37f57411-9086-81b7-bbcb-f364da72863e_lesson_content_chunk_3",
+            "Notion:M01W03 - Data Structure (Graph and Tree):heading=VII. Summary (Tổng kết):id=37f57411-9086-81b7-bbcb-f364da72863e_lesson_content_chunk_32"
+          ],
+          "retrieval_debug": {
+            "retrieved_count": 20,
+            "reranked_count": 20,
+            "final_count": 4,
+            "rerank_enabled": false,
+            "mmr_enabled": false
+          },
+          "ragas": {
+            "faithfulness": 1.0,
+            "answer_relevancy": 0.7582259340855848,
+            "context_precision": 0.9166666666361111,
+            "context_recall": 1.0
+          }
+        },
+        {
+          "sample_id": "basic_python_scope",
+          "question": "Bài Basic Python trong module 1 học những nội dung nào?",
+          "answer": "Bài Basic Python trong module 1 học về:\n\n- Kiến thức Python cơ bản: Biến và Kiểu dữ liệu, Cấu trúc điều khiển, Hàm (Function), Xử lý ngoại lệ.\n- Xử lý chuỗi (String and Loops~Text preprocessing): Chưa được đề cập trong tài liệu.",
+          "error": "",
+          "attempt_count": 1,
+          "generation_skipped": false,
+          "ground_truth": "Basic Python trong module 1 bao gồm các nội dung nền tảng như biến, hàm, branching, vòng lặp for/while, list, tuple, dictionary và các bài tập nhập môn lập trình Python liên quan.",
+          "expected_source_notes": "Should cite Basic Python metadata/content and ML pipeline overview chunks.",
+          "tags": [
+            "notion",
+            "python",
+            "summary"
+          ],
+          "contexts": [
+            "4. Thuật Toán\nCuối cùng là phần Thuật toán. Tuy nhiên ở module 1 này ta mới chỉ đang nhập môn lập trình Python, cụ thể là học về: biến, hàm,  for loop ,  while loop ,  list ,  tuple ,  set ,  dictionary ,  comprehension ,  slicing …\n\nCác bài tập nhỏ liên quan tới nội dung ML, DL. Đây sẽ là những nền tảng bước đệm để sau ta có thể học tốt và hiểu sâu về Thuật Toán và AI.",
+            "1. Kiến thức Python Cơ Bản\n- Biến và Kiểu dữ liệu : Python hỗ trợ các kiểu dữ liệu cơ bản như số nguyên (`int`), số thực (`float`), chuỗi (`str`), và giá trị đúng/sai (`bool`).\n\n- Cấu trúc điều khiển : Sử dụng `if`, `elif`, `else` để kiểm tra điều kiện; vòng lặp `for` để duyệt phần tử và `while` để lặp khi điều kiện còn đúng.\n\n- Hàm (Function) : Giúp đóng gói logic và tái sử dụng mã nguồn bằng từ khóa `def`.\n\n- Xử lý ngoại lệ : Sử dụng cấu trúc `try/except` để ngăn chương trình bị dừng đột ngột khi gặp lỗi (ví dụ: lỗi ép kiểu).",
+            "Bài: [📝Sharing Cá Nhân] Tổng hợp các bài học đến module 1 week 2 theo ML pipeline\nWeek: \nDate: 2026-06-14\nModule: 1\nLecturer: \nLabel: Toán Cơ Bản và Lập Trình Python\nTổng hợp: True",
+            "Bài: M01W01 - Basic Python (String and Loops~Text preprocessing)\nWeek: \nDate: 2026-06-05\nModule: 1\nLecturer: Dr. Quang Vinh\nLabel: Toán Cơ Bản và Lập Trình Python\nTổng hợp: False"
+          ],
+          "source_ids": [
+            "37f57411-9086-8034-a3fe-cf6287e01726_lesson_content_chunk_5",
+            "37f57411-9086-817e-b344-ed39a359e589_lesson_content_chunk_0",
+            "notion_37f57411-9086-8034-a3fe-cf6287e01726_metadata",
+            "notion_37f57411-9086-81e3-b954-f0f1f008fb08_metadata"
+          ],
+          "source_titles": [
+            "Notion:[📝Sharing Cá Nhân] Tổng hợp các bài học đến module 1 week 2 theo ML pipeline:heading=[📝Sharing Cá Nhân] Tổng hợp các bài học đến Module 1 Week 2 theo ML Pipeline > 4. Thuật Toán:id=37f57411-9086-8034-a3fe-cf6287e01726_lesson_content_chunk_5",
+            "Notion:M01W01 - TA-Exercise:heading=1. Kiến thức Python Cơ Bản:id=37f57411-9086-817e-b344-ed39a359e589_lesson_content_chunk_0",
+            "Notion:[📝Sharing Cá Nhân] Tổng hợp các bài học đến module 1 week 2 theo ML pipeline:heading=:id=notion_37f57411-9086-8034-a3fe-cf6287e01726_metadata",
+            "Notion:M01W01 - Basic Python (String and Loops~Text preprocessing):heading=:id=notion_37f57411-9086-81e3-b954-f0f1f008fb08_metadata"
+          ],
+          "retrieval_debug": {
+            "retrieved_count": 20,
+            "reranked_count": 20,
+            "final_count": 4,
+            "rerank_enabled": false,
+            "mmr_enabled": false
+          },
+          "ragas": {
+            "faithfulness": 0.75,
+            "answer_relevancy": 0.7732871318672636,
+            "context_precision": 0.999999999975,
+            "context_recall": 0.0
+          }
+        }
+      ]
+    },
+    {
+      "report_type": "single_pipeline",
+      "generated_at": "2026-06-28T09:16:32.875111+00:00",
+      "sample_count": 6,
+      "metrics": [
+        "faithfulness",
+        "answer_relevancy",
+        "context_precision",
+        "context_recall"
+      ],
+      "config": {
+        "pipeline_name": "hybrid_rrf_rerank_mmr",
+        "pipeline_label": "Hybrid RRF + Cohere Rerank + MMR",
+        "retrieval_mode": "hybrid_rrf",
+        "candidate_k": 20,
+        "top_k": 4,
+        "rerank_enabled": true,
+        "rerank_provider": "cohere",
+        "rerank_top_n": 10,
+        "mmr_enabled": true,
+        "mmr_lambda": 0.65,
+        "final_context_k": 4,
+        "use_ragas": true,
+        "request_delay_seconds": 2.0,
+        "retry_attempts": 1,
+        "retry_delay_seconds": 8.0,
+        "generate_answers": true,
+        "ragas_batch_size": 1,
+        "ragas_delay_seconds": 2.0,
+        "ragas_retry_attempts": 1,
+        "ragas_retry_delay_seconds": 8.0,
+        "ragas_judge_model": "command-r7b-12-2024"
+      },
+      "records": [
+        {
+          "sample_id": "python_birth_year",
+          "question": "Python ra đời năm nào và do ai thiết kế?",
+          "answer": "Python ra đời năm 1991 và được thiết kế bởi Guido van Rossum.",
+          "error": "",
+          "attempt_count": 1,
+          "generation_skipped": false,
+          "ground_truth": "Python ra đời năm 1991 và được thiết kế bởi Guido van Rossum.",
+          "expected_source_notes": "Should cite Basic Python introduction chunks mentioning 1991 and Guido van Rossum.",
+          "tags": [
+            "notion",
+            "python",
+            "fact"
+          ],
+          "contexts": [
+            "1. Giới thiệu về Python\n- Lịch sử : Python ra đời năm 1991, được thiết kế bởi Guido van Rossum với triết lý dễ đọc, dễ học. Sự bùng nổ của Python diễn ra mạnh mẽ trong hơn một thập kỷ gần đây nhờ làn sóng AI, Machine Learning và Data Mining.\n\n- Tại sao chọn Python? : So với C++, Java hay Lua, Python có cú pháp đơn giản, không cần quản lý bộ nhớ thủ công, giúp nhà nghiên cứu tập trung vào bài toán cốt lõi.\n\n- Các thư viện phổ biến :\n\n- Học máy/Học sâu: TensorFlow, PyTorch, Keras, Scikit-learn.\n\n- Xử lý dữ liệu: NumPy, Pandas.\n\n- Trực quan hóa: Matplotlib, Plotly.\n\n- Xử lý ngôn ngữ tự nhiên (NLP): NLTK, spaCy, Gensim.\n\n---",
+            "1.1 Lịch sử và sự phát triển\n- Python ra đời năm 1991 (tính đến nay đã hơn 30 năm). Ban đầu nó được thiết kế với triết lý dễ đọc, dễ học.\n\n- Sự bùng nổ của Python diễn ra mạnh mẽ trong hơn một thập kỷ gần đây nhờ sự phát triển của làn sóng AI, Machine Learning (Học máy) và Data Mining (Khai phá dữ liệu).\n\n- Tại sao lại học code Python mà không phải ngôn ngữ khác?\n\n- So với các ngôn ngữ truyền thống như C++, Java, hay Lua, Python mang lại cú pháp đơn giản, người lập trình không cần quản lý bộ nhớ thủ công phức tạp (không phải cấp phát tĩnh/động thủ công), giúp các nhà nghiên cứu và kỹ sư dữ liệu tập trung hoàn toàn vào việc giải quyết bài toán cốt lõi.",
+            "Phần 2: Pythonic Code\nPythonic là việc tận dụng tối đa các đặc trưng riêng biệt của Python để viết code ngắn gọn, hiệu quả và đúng phong cách.\n\n- The Zen of Python (PEP 20) : Triết lý thiết kế Python với các nguyên tắc như: \"Đẹp tốt hơn xấu\", \"Rõ ràng tốt hơn ẩn ý\", \"Đơn giản tốt hơn phức tạp\".\n\n- Comprehensions : Sử dụng List/Dictionary Comprehensions để tạo cấu trúc dữ liệu trên một dòng, thường nhanh và dễ đọc hơn vòng lặp truyền thống.\n\n- Context Managers ( with ) : Tự động quản lý và giải phóng tài nguyên (file, kết nối database, API) ngay cả khi có lỗi xảy ra.\n\n- So sánh & Điều kiện phong cách Pythonic :\n\n- Dùng  is None  thay vì  == None .\n\n- Kiểm tra container rỗng trực tiếp ( if items: ) thay vì check độ dài.\n\n- Dùng  in  để kiểm tra thành viên.\n\n- Sử dụng so sánh chuỗi (Chaining comparison):  0 <= score <= 100 .\n\n- Quy ước Dấu gạch dưới (Underscore) :\n\n- _var : Sử dụng nội bộ.\n\n- __var : Tránh truy cập từ ngoài class.\n\n- __var__ : Các phương thức đặc biệt (Dunder methods).",
+            "9. Thảo luận & Câu hỏi\n- Bổ sung IELTS nếu muốn du học → nhiều cơ hội rộng mở.\n\n- Học code bổ trợ: 100 bài tập code Python có lời giải.\n\n- Mở tuyển member nghiên cứu tháng 8-10 hoặc tháng 12-1.\n\n- Tư duy ngành CNTT: luôn cập nhật, thích nghi cái mới.\n\n- Medical AI : Ứng dụng nhiều loại thuật toán (Time-series, Computer Vision, NLP). Nền tảng cốt lõi:  Transformer .\n\n- Không nên lạm dụng AI sinh code  khi đang học nền tảng. Hãy hiểu từng dòng code mẫu.\n\n- Chống trì hoãn : Kỷ luật + thói quen (Atomic Habits). Sáng lập to-do list và bám sát.\n\n- GPU được thiết kế tối ưu cho phép toán ma trận/vector. Dùng  for  xử lý từng phần tử trong Deep Learning sẽ rất chậm. Phải biến vòng lặp -> phép tính nguyên cụm ma trận →  Vectorization ."
+          ],
+          "source_ids": [
+            "37f57411-9086-81bf-94c1-dc384eec22bd_lesson_content_chunk_0",
+            "37f57411-9086-8152-a76d-fdc4d33bc22c_lesson_content_chunk_1",
+            "37f57411-9086-819d-9787-c85c309ea654_lesson_content_chunk_4",
+            "37f57411-9086-81bf-94c1-dc384eec22bd_lesson_content_chunk_29"
+          ],
+          "source_titles": [
+            "Notion:Mix thứ 4 và thứ 6:heading=PHẦN I: NỀN TẢNG PYTHON (Buổi Thứ 4 — Basic Python) > 1. Giới thiệu về Python:id=37f57411-9086-81bf-94c1-dc384eec22bd_lesson_content_chunk_0",
+            "Notion:M01W01 - Basic Python (Branching~Rule-based Chatbot):heading=SECTION 1: INTRODUCTION (GIỚI THIỆU VỀ PYTHON) > 1.1 Lịch sử và sự phát triển:id=37f57411-9086-8152-a76d-fdc4d33bc22c_lesson_content_chunk_1",
+            "Notion:M01W02 - Coding Methodology:heading=Phần 0: Tại sao Methodology quan trọng? > Phần 2: Pythonic Code:id=37f57411-9086-819d-9787-c85c309ea654_lesson_content_chunk_4",
+            "Notion:Mix thứ 4 và thứ 6:heading=PHẦN II: VÒNG LẶP (Buổi Thứ 6 — For Loop & While Loop) > 9. Thảo luận & Câu hỏi:id=37f57411-9086-81bf-94c1-dc384eec22bd_lesson_content_chunk_29"
+          ],
+          "retrieval_debug": {
+            "retrieved_count": 20,
+            "reranked_count": 10,
+            "final_count": 4,
+            "rerank_enabled": true,
+            "mmr_enabled": true
+          },
+          "ragas": {
+            "faithfulness": 1.0,
+            "answer_relevancy": 0.7577510639014345,
+            "context_precision": 0.99999999995,
+            "context_recall": 1.0
+          }
+        },
+        {
+          "sample_id": "for_while_loop_compare",
+          "question": "So sánh ngắn gọn vòng lặp for và while trong Python.",
+          "answer": "Vòng lặp `for` và `while` trong Python có những điểm khác biệt như sau:\n\n- **Biến đếm**: `for` tự động quản lý biến đếm qua `range()`, trong khi `while` cần phải tự khởi tạo và tự tăng/giảm biến.\n- **Số lần lặp**: `for` biết trước số lần lặp, còn `while` không cần biết trước.\n- **Rủi ro**: `for` ít có nguy cơ lặp vô tận, trong khi `while` có nguy cơ này nếu không tăng/giảm biến.\n- **Cú pháp**: `while` có điều kiện phải luôn `True` để lặp lại, trong khi `for` có thể được sử dụng trong các tình huống khác nhau.\n- **Kiểm soát**: `break` trong `while` để ngắt vòng lặp, trong khi `continue` trong `for` để bỏ qua phần code còn lại của lần lặp hiện tại.",
+          "error": "",
+          "attempt_count": 1,
+          "generation_skipped": false,
+          "ground_truth": "For thường dùng khi biết trước số lần lặp hoặc duyệt qua iterable và tự quản lý biến đếm qua range; while lặp khi điều kiện còn đúng, thường dùng khi chưa biết trước số lần lặp và cần tự quản lý điều kiện dừng.",
+          "expected_source_notes": "Should cite For Loop & While Loop chunks.",
+          "tags": [
+            "notion",
+            "python",
+            "loop",
+            "comparison"
+          ],
+          "contexts": [
+            "6. Vòng lặp  for\nVòng lặp  for  là cấu trúc lặp phổ biến nhất (chiếm ~99% trường hợp). Những gì  for  làm được thì  while  cũng làm được, nhưng  for  thường ngắn gọn và dễ hiểu hơn.",
+            "7.2. So sánh  for  vs  while\n[Table]\n\n| Tiêu chí | for | while |\n\n| Biến đếm | Tự động quản lý qua  range() | Phải  tự khởi tạo  và  tự tăng/giảm |\n\n| Số lần lặp | Biết trước | Không cần biết trước |\n\n| Rủi ro | Ít | Quên tăng/giảm biến → lặp vô tận |\n\n---",
+            "7.1. Cú pháp\n- while <điều_kiện>:  — Lặp chừng nào điều kiện còn  True . Khi  False  → kết thúc.\n\n- Vòng lặp vô tận :  while True:  — Chạy mãi mãi (VD: camera an ninh). Phải dùng  break  để ngắt.",
+            "6.3. Kiểm soát vòng lặp:  break  và  continue\n- `break` : Thoát vòng lặp ngay lập tức. Code bên dưới  break  bị bỏ qua. (VD: tìm thấy người trúng thưởng → ngừng duyệt).\n\n- `continue` : Bỏ qua phần code còn lại của lần lặp hiện tại, nhưng  không thoát  vòng lặp → quay lên lần lặp kế tiếp. (VD: bỏ qua nhân viên không đạt KPI, tiếp tục duyệt).\n\n---"
+          ],
+          "source_ids": [
+            "37f57411-9086-81bf-94c1-dc384eec22bd_lesson_content_chunk_17",
+            "37f57411-9086-81bf-94c1-dc384eec22bd_lesson_content_chunk_23",
+            "37f57411-9086-81bf-94c1-dc384eec22bd_lesson_content_chunk_22",
+            "37f57411-9086-81bf-94c1-dc384eec22bd_lesson_content_chunk_20"
+          ],
+          "source_titles": [
+            "Notion:Mix thứ 4 và thứ 6:heading=PHẦN II: VÒNG LẶP (Buổi Thứ 6 — For Loop & While Loop) > 6. Vòng lặp  for:id=37f57411-9086-81bf-94c1-dc384eec22bd_lesson_content_chunk_17",
+            "Notion:Mix thứ 4 và thứ 6:heading=PHẦN II: VÒNG LẶP (Buổi Thứ 6 — For Loop & While Loop) > 7. Vòng lặp  while > 7.2. So sánh  for  vs  while:id=37f57411-9086-81bf-94c1-dc384eec22bd_lesson_content_chunk_23",
+            "Notion:Mix thứ 4 và thứ 6:heading=PHẦN II: VÒNG LẶP (Buổi Thứ 6 — For Loop & While Loop) > 7. Vòng lặp  while > 7.1. Cú pháp:id=37f57411-9086-81bf-94c1-dc384eec22bd_lesson_content_chunk_22",
+            "Notion:Mix thứ 4 và thứ 6:heading=PHẦN II: VÒNG LẶP (Buổi Thứ 6 — For Loop & While Loop) > 6. Vòng lặp  for > 6.3. Kiểm soát vòng lặp:  break  và  continue:id=37f57411-9086-81bf-94c1-dc384eec22bd_lesson_content_chunk_20"
+          ],
+          "retrieval_debug": {
+            "retrieved_count": 20,
+            "reranked_count": 10,
+            "final_count": 4,
+            "rerank_enabled": true,
+            "mmr_enabled": true
+          },
+          "ragas": {
+            "faithfulness": 1.0,
+            "answer_relevancy": 0.6816140186424947,
+            "context_precision": 0.999999999975,
+            "context_recall": 1.0
+          }
+        },
+        {
+          "sample_id": "erd_components",
+          "question": "ERD có những thành phần chính nào?",
+          "answer": "ERD có các thành phần chính sau:\n\n- Thực thể (Entity): Đối tượng cụ thể có thật dùng để chứa dữ liệu.\n- Thuộc tính (Attribute): Các thông tin mô tả thực thể.\n- Mối quan hệ (Relationship) và Ràng buộc.",
+          "error": "",
+          "attempt_count": 1,
+          "generation_skipped": false,
+          "ground_truth": "ERD gồm các thành phần như thực thể, thuộc tính, thuộc tính khóa, mối quan hệ, bản số quan hệ và ràng buộc tham gia; quan hệ nhiều-nhiều thường cần bảng trung gian.",
+          "expected_source_notes": "Should cite Data Extraction/Retrieval Using SQL ERD section.",
+          "tags": [
+            "notion",
+            "sql",
+            "erd"
+          ],
+          "contexts": [
+            "2. Các thành phần chính trong ERD\nA. Thực thể (Entity)\n\nĐối tượng cụ thể có thật dùng để chứa dữ liệu. Khi cài đặt vào CSDL, mỗi thực thể thường trở thành một  Bảng (Table) .\n\n- Thực thể độc lập (Strong Entity):  Tồn tại độc lập, không phụ thuộc vào bảng khác (VD:  Khách hàng ,  Sản phẩm ).\n\n- Thực thể yếu (Weak Entity):  Phụ thuộc vào thực thể khác để tồn tại. (VD:  Chi tiết đơn hàng  không thể tồn tại nếu không có thông tin của  Đơn hàng ).\n\n- Thực thể kết hợp (Associative Entity):  Một bảng trung gian được sinh ra để bẻ gãy mối quan hệ Nhiều - Nhiều (N:N) giữa hai thực thể thành hai mối quan hệ Một - Nhiều (1:N). (VD: Bảng  order_detail  nằm giữa bảng  order  và bảng  product ).\n\nB. Thuộc tính (Attribute)\n\nLà các thông tin mô tả thực thể. Khi cài đặt, mỗi thuộc tính sẽ map thành một  Cột (Column)  trong Bảng.",
+            "2. Các thành phần chính trong ERD\n- M:N (Nhiều - Nhiều): Thường phải tách ra thành bảng trung gian (Thực thể kết hợp).\n\n- Ràng buộc tham gia (Participation Constraints):\n\n- Total Participation (Tham gia toàn bộ):  Mọi thực thể bắt buộc phải tham gia quan hệ (ký hiệu nét liền đôi). VD: Một chương sách bắt buộc phải thuộc về một quyển sách, hoặc sinh viên bắt buộc phải có giảng viên hướng dẫn.\n\n- Partial Participation (Tham gia một phần):  Không bắt buộc tham gia toàn bộ (ký hiệu nét liền đơn). VD: Giảng viên có thể chưa hướng dẫn sinh viên nào.",
+            "2. Các thành phần chính trong ERD\n- Key Attribute (Thuộc tính khóa):  Dùng để định danh duy nhất (Primary Key). Có thể là khóa đơn (VD:  customer_id ) hoặc khóa kết hợp (Composite Key - VD:  customer_id  +  product_id ). Khóa chính đóng vai trò như một index, giúp tìm kiếm (search) giữa hàng triệu record cực kỳ nhanh.\n\n- Simple Attribute (Thuộc tính đơn giản):  Thuộc tính thông thường.\n\n- Composite Attribute (Thuộc tính phức hợp):  Bao gồm nhiều thành phần cấu tạo thành (VD:  Address  gồm đường, phường, quận, thành phố...).\n\n- Multivalued Attribute (Thuộc tính đa trị):  Một thực thể có thể có nhiều giá trị cho thuộc tính này (VD: Một khách hàng có nhiều  số điện thoại ).\n\n- Derived Attribute (Thuộc tính suy diễn):  Có thể tính toán/suy ra từ các thông tin khác trong hệ thống (VD:  Tuổi  được suy ra từ  Ngày sinh ).\n\nC. Mối quan hệ (Relationship) và Ràng buộc\n\n- Các loại kết nối (Cardinality):\n\n- 1:1 (Một - Một).\n\n- 1:N (Một - Nhiều): Phổ biến nhất.",
+            "1. Định nghĩa và Mục đích\nERD  là một sơ đồ biểu diễn trực quan cấu trúc logic của cơ sở dữ liệu, thể hiện các thực thể (entities) khác nhau trong hệ thống và mối quan hệ giữa chúng.\n\nMục đích:  Trong thực tế doanh nghiệp, dữ liệu cần được tổ chức chặt chẽ và chuẩn hóa để tránh dư thừa (redundancy). ERD đóng vai trò như một \"bản thiết kế\" trước khi cài đặt thực tế vào các hệ quản trị CSDL (như MySQL, PostgreSQL). Bước thiết kế này chiếm một phần quan trọng (60 - 70% thời gian xử lý dữ liệu) để đảm bảo quá trình truy vấn và làm sạch dữ liệu sau này diễn ra trơn tru."
+          ],
+          "source_ids": [
+            "37f57411-9086-811f-bc4f-c45644fde64d_lesson_content_chunk_1",
+            "37f57411-9086-811f-bc4f-c45644fde64d_lesson_content_chunk_3",
+            "37f57411-9086-811f-bc4f-c45644fde64d_lesson_content_chunk_2",
+            "37f57411-9086-811f-bc4f-c45644fde64d_lesson_content_chunk_0"
+          ],
+          "source_titles": [
+            "Notion:M01W02 - Data Extraction/Retrieval Using SQL:heading=I. Giới thiệu về Lược đồ Mối quan hệ Thực thể (Entity Relationship Diagram - ERD) > 2. Các thành phần chính trong ERD:id=37f57411-9086-811f-bc4f-c45644fde64d_lesson_content_chunk_1",
+            "Notion:M01W02 - Data Extraction/Retrieval Using SQL:heading=I. Giới thiệu về Lược đồ Mối quan hệ Thực thể (Entity Relationship Diagram - ERD) > 2. Các thành phần chính trong ERD:id=37f57411-9086-811f-bc4f-c45644fde64d_lesson_content_chunk_3",
+            "Notion:M01W02 - Data Extraction/Retrieval Using SQL:heading=I. Giới thiệu về Lược đồ Mối quan hệ Thực thể (Entity Relationship Diagram - ERD) > 2. Các thành phần chính trong ERD:id=37f57411-9086-811f-bc4f-c45644fde64d_lesson_content_chunk_2",
+            "Notion:M01W02 - Data Extraction/Retrieval Using SQL:heading=I. Giới thiệu về Lược đồ Mối quan hệ Thực thể (Entity Relationship Diagram - ERD) > 1. Định nghĩa và Mục đích:id=37f57411-9086-811f-bc4f-c45644fde64d_lesson_content_chunk_0"
+          ],
+          "retrieval_debug": {
+            "retrieved_count": 20,
+            "reranked_count": 10,
+            "final_count": 4,
+            "rerank_enabled": true,
+            "mmr_enabled": true
+          },
+          "ragas": {
+            "faithfulness": 1.0,
+            "answer_relevancy": 0.6360851902338857,
+            "context_precision": 0.999999999975,
+            "context_recall": 1.0
+          }
+        },
+        {
+          "sample_id": "nlp_tasks",
+          "question": "Các tác vụ NLP phổ biến trong phần Text Data là gì?",
+          "answer": "Các tác vụ NLP phổ biến trong phần Text Data bao gồm:\n\n- Phân loại văn bản (Text Classification)\n- Tóm tắt văn bản (Text Summarization)\n- Phân tích cảm xúc (Sentiment analysis)\n- Dịch thuật (Translation)\n- Trả lời câu hỏi (Question answering)\n- Chatbot",
+          "error": "",
+          "attempt_count": 1,
+          "generation_skipped": false,
+          "ground_truth": "Các tác vụ NLP phổ biến gồm phân loại văn bản, phân tích cảm xúc, nhận dạng thực thể, dịch máy, tóm tắt văn bản và hỏi đáp hoặc các tác vụ xử lý ngôn ngữ tự nhiên tương tự được nêu trong bài Text Data.",
+          "expected_source_notes": "Should cite Text and Audio Data natural language tasks section.",
+          "tags": [
+            "notion",
+            "text-data",
+            "nlp"
+          ],
+          "contexts": [
+            "8. Các tác vụ Ngôn ngữ Tự nhiên (Natural Language Tasks)\n- Phân loại văn bản (Text Classification):  Ví dụ như phân loại Email xem có phải là SPAM hay không, hoặc phân loại các đánh giá sách (Book Reviews) thành Positive (Tích cực), Neutral (Trung tính), Negative (Tiêu cực).\n\n- Tóm tắt văn bản (Text Summarization):  Chuyển đổi một đoạn văn bản dài thành một đoạn tóm tắt ngắn gọn. Các mô hình như T5 có thể xử lý đa nhiệm (dịch thuật, kiểm tra ngữ pháp, tính điểm tương đồng, và tóm tắt).\n\n- Conversational AI (AI Hội thoại):  Các hệ thống có khả năng tương tác với người dùng thông qua hội thoại (Voice hoặc Text).\n\n---",
+            "7. Từ Văn bản đến Mô hình AI (From Text to AI Models)\n- Quy trình:   Raw text  ->  Unicode / UTF-8  ->  Tokenization  ->  Numerical IDs  ->  Embeddings  ->  NLP model .\n\n- Các tác vụ đầu ra ví dụ (Example Output Tasks):\n\n- Phân loại văn bản (Text classification)\n\n- Phân tích cảm xúc (Sentiment analysis)\n\n- Dịch thuật (Translation)\n\n- Trả lời câu hỏi (Question answering)\n\n- Tóm tắt văn bản (Summarization)\n\n- Chatbot",
+            "1. Mục tiêu bài học (Objectives)\n- Dữ liệu văn bản (Text Data):\n\n- Hiểu cách dữ liệu văn bản được thu thập và biểu diễn trong máy tính.\n\n- Áp dụng các bước tiền xử lý cốt lõi: phân tích từ (tokenization), làm sạch (cleaning), và chuẩn hóa (normalization).\n\n- Khám phá các ứng dụng của Xử lý ngôn ngữ tự nhiên (NLP) và nhúng từ (word embeddings).\n\n- Dữ liệu âm thanh (Audio Data):\n\n- Hiểu các tín hiệu âm thanh dưới dạng sóng (waveforms) và phổ đồ (spectrograms).\n\n- Tìm hiểu về lấy mẫu (sampling), các đặc trưng chính (MFCCs) và xử lý âm thanh.\n\n- Khám phá các bài toán nhận dạng giọng nói và phân loại âm thanh.",
+            "9. Các tác vụ Âm thanh (Audio Tasks)\n- Nhận dạng giọng nói tự động (Automatic Speech Recognition - ASR):\n\n- Nhận dạng cảm xúc giọng nói (Speech Emotion Recognition):\n\n- Chuyển văn bản thành giọng nói (Text to Speech):\n\n---"
+          ],
+          "source_ids": [
+            "37f57411-9086-81bc-a0b1-d87d4ff71ae1_lesson_content_chunk_13",
+            "37f57411-9086-81bc-a0b1-d87d4ff71ae1_lesson_content_chunk_12",
+            "37f57411-9086-81bc-a0b1-d87d4ff71ae1_lesson_content_chunk_0",
+            "37f57411-9086-81bc-a0b1-d87d4ff71ae1_lesson_content_chunk_22"
+          ],
+          "source_titles": [
+            "Notion:M01W03 - Text and Audio Data:heading=II. Text Data > 8. Các tác vụ Ngôn ngữ Tự nhiên (Natural Language Tasks):id=37f57411-9086-81bc-a0b1-d87d4ff71ae1_lesson_content_chunk_13",
+            "Notion:M01W03 - Text and Audio Data:heading=II. Text Data > 7. Từ Văn bản đến Mô hình AI (From Text to AI Models):id=37f57411-9086-81bc-a0b1-d87d4ff71ae1_lesson_content_chunk_12",
+            "Notion:M01W03 - Text and Audio Data:heading=I. Introduction > 1. Mục tiêu bài học (Objectives):id=37f57411-9086-81bc-a0b1-d87d4ff71ae1_lesson_content_chunk_0",
+            "Notion:M01W03 - Text and Audio Data:heading=III. Audio Data > 9. Các tác vụ Âm thanh (Audio Tasks):id=37f57411-9086-81bc-a0b1-d87d4ff71ae1_lesson_content_chunk_22"
+          ],
+          "retrieval_debug": {
+            "retrieved_count": 20,
+            "reranked_count": 10,
+            "final_count": 4,
+            "rerank_enabled": true,
+            "mmr_enabled": true
+          },
+          "ragas": {
+            "faithfulness": 1.0,
+            "answer_relevancy": 0.7621582000242154,
+            "context_precision": 0.9999999999666667,
+            "context_recall": 1.0
+          }
+        },
+        {
+          "sample_id": "tree_applications",
+          "question": "Tree được ứng dụng ở đâu trong khoa học máy tính?",
+          "answer": "Tree được ứng dụng trong nhiều khía cạnh của khoa học máy tính, bao gồm:\n\n- **File Explorer**: Hệ thống quản lý file/thư mục trên máy tính được tổ chức dạng cây.\n- **Database**: Các hệ quản trị cơ sở dữ liệu dùng Tree để tối ưu việc lập chỉ mục (indexing).\n- **HTML DOM**: Giao diện của trang web (DOM Tree) với các thẻ lồng nhau.\n- **Machine Learning & AI**: Sử dụng rất nhiều trong thuật toán Decision Tree (Cây quyết định).\n- **K-D Tree**: Dùng để chia không gian đa chiều, ứng dụng nhiều trong tìm kiếm điểm lân cận gần nhất (nearest neighbor).",
+          "error": "",
+          "attempt_count": 1,
+          "generation_skipped": false,
+          "ground_truth": "Tree được dùng trong các hệ thống dạng phân cấp như File Explorer, cơ sở dữ liệu, DOM/HTML, trình biên dịch hoặc các cấu trúc tìm kiếm và tổ chức dữ liệu phân cấp.",
+          "expected_source_notes": "Should cite Graph and Tree applications section.",
+          "tags": [
+            "notion",
+            "data-structure",
+            "tree"
+          ],
+          "contexts": [
+            "7. Các ứng dụng của Tree (Tree Applications)\nTree được ứng dụng rất rộng rãi trong khoa học máy tính:\n\n- File Explorer:  Hệ thống quản lý file/thư mục trên máy tính được tổ chức dạng cây.\n\n- Database:  Các hệ quản trị cơ sở dữ liệu dùng Tree để tối ưu việc lập chỉ mục (indexing).\n\n- HTML DOM:  Giao diện của trang web (DOM Tree) với các thẻ lồng nhau.\n\n- Machine Learning & AI:  Sử dụng rất nhiều trong thuật toán Decision Tree (Cây quyết định).\n\n- K-D Tree (K-Dimensional Tree):  Dùng để chia không gian đa chiều, ứng dụng nhiều trong tìm kiếm điểm lân cận gần nhất (nearest neighbor).\n\n[Image: image block]\n\n[Image: image block]\n\n[Image: image block]",
+            "2. Tại sao nên sử dụng Tree?\nCác cấu trúc dữ liệu khác như mảng (Arrays) hoặc danh sách liên kết (Linked Lists) là các cấu trúc dữ liệu tuyến tính (linear data structures). Chúng lưu trữ dữ liệu một cách tuần tự. Vấn đề xảy ra khi chúng ta muốn tìm kiếm một phần tử (ví dụ: kiểm tra xem số 8 có tồn tại trong danh sách không). Với mảng, ta phải duyệt qua từng phần tử một từ đầu đến cuối, việc này không hiệu quả nếu danh sách rất lớn.\n\n[Image: image block]\n\nChính vì vậy, chúng ta cần một cấu trúc dữ liệu mới hỗ trợ việc tìm kiếm hiệu quả hơn, đó chính là Tree.\n\nSự hiệu quả của Tree đến từ quy tắc tổ chức dữ liệu của nó (đặc biệt là trong Binary Search Tree - Cây tìm kiếm nhị phân):\n\nLeft subtree values < Node Value < Right subtree values  (Giá trị cây con bên trái < Giá trị nút hiện tại < Giá trị cây con bên phải).\n\nNhờ quy tắc này, thay vì phải duyệt toàn bộ, ta chỉ cần rẽ trái hoặc phải tùy theo giá trị cần tìm, giúp giảm đáng kể thời gian tìm kiếm.",
+            "VII. Summary (Tổng kết)\n- Tree (Cây):  Cấu trúc dữ liệu phân cấp tuyến tính (Ví dụ: Binary Tree, Binary Search Tree). Phù hợp cho việc tổ chức dữ liệu có thứ bậc, dễ dàng tìm kiếm (như BST).\n\n- Graph (Đồ thị):  Cấu trúc mạng lưới phức tạp hơn Tree, chứa các Nút và Cạnh (Có hướng/Vô hướng, Có trọng số/Không trọng số).\n\n- Duyệt (Traversal):\n\n- DFS (Depth-First Search):  Đi sâu nhất có thể, dùng đệ quy hoặc  Stack (LIFO) .\n\n- BFS (Breadth-First Search):  Duyệt theo từng tầng/lớp, bắt buộc dùng  Queue (FIFO) .\n\n- Stack & Queue:  Là các cấu trúc dữ liệu cơ bản quan trọng, không chỉ dùng để duyệt cây/đồ thị mà còn ứng dụng rộng rãi trong lập trình thực tế (Quản lý bộ nhớ, History Browser, Task Scheduling, v.v...).",
+            "1. Tree (Cây) là gì?\nCấu trúc dữ liệu Tree có thể được nhìn nhận dưới hai góc độ:\n\n- Góc nhìn thực tế (Human view):  Một cái cây trong tự nhiên với rễ, thân, cành và lá.\n\n- Góc nhìn lập trình (Programmer's View):  Cấu trúc cây bị lật ngược lại so với thực tế, với gốc (Root) nằm ở trên cùng và phân nhánh xuống dưới thành các nút (Node) và lá (Leaf).\n\n[Image: image block]"
+          ],
+          "source_ids": [
+            "37f57411-9086-81b7-bbcb-f364da72863e_lesson_content_chunk_8",
+            "37f57411-9086-81b7-bbcb-f364da72863e_lesson_content_chunk_1",
+            "37f57411-9086-81b7-bbcb-f364da72863e_lesson_content_chunk_32",
+            "37f57411-9086-81b7-bbcb-f364da72863e_lesson_content_chunk_0"
+          ],
+          "source_titles": [
+            "Notion:M01W03 - Data Structure (Graph and Tree):heading=I. What is a Tree Data Structure > 7. Các ứng dụng của Tree (Tree Applications):id=37f57411-9086-81b7-bbcb-f364da72863e_lesson_content_chunk_8",
+            "Notion:M01W03 - Data Structure (Graph and Tree):heading=I. What is a Tree Data Structure > 2. Tại sao nên sử dụng Tree?:id=37f57411-9086-81b7-bbcb-f364da72863e_lesson_content_chunk_1",
+            "Notion:M01W03 - Data Structure (Graph and Tree):heading=VII. Summary (Tổng kết):id=37f57411-9086-81b7-bbcb-f364da72863e_lesson_content_chunk_32",
+            "Notion:M01W03 - Data Structure (Graph and Tree):heading=I. What is a Tree Data Structure > 1. Tree (Cây) là gì?:id=37f57411-9086-81b7-bbcb-f364da72863e_lesson_content_chunk_0"
+          ],
+          "retrieval_debug": {
+            "retrieved_count": 20,
+            "reranked_count": 10,
+            "final_count": 4,
+            "rerank_enabled": true,
+            "mmr_enabled": true
+          },
+          "ragas": {
+            "faithfulness": 1.0,
+            "answer_relevancy": 0.7606818798015631,
+            "context_precision": 0.999999999975,
+            "context_recall": 1.0
+          }
+        },
+        {
+          "sample_id": "basic_python_scope",
+          "question": "Bài Basic Python trong module 1 học những nội dung nào?",
+          "answer": "Bài Basic Python trong module 1 học về:\n\n- Biến và Kiểu dữ liệu: Python hỗ trợ các kiểu dữ liệu cơ bản như số nguyên (`int`), số thực (`float`), chuỗi (`str`), và giá trị đúng/sai (`bool`).\n\n- Cấu trúc điều khiển: Sử dụng `if`, `elif`, `else` để kiểm tra điều kiện; vòng lặp `for` để duyệt phần tử và `while` để lặp khi điều kiện còn đúng.\n\n- Hàm (Function): Giúp đóng gói logic và tái sử dụng mã nguồn bằng từ khóa `def`.\n\n- Xử lý ngoại lệ: Sử dụng cấu trúc `try/except` để ngăn chương trình bị dừng đột ngột khi gặp lỗi (ví dụ: lỗi ép kiểu).\n\n- Các chủ đề khác có thể bao gồm: biến, hàm, for loop, while loop, list, tuple, set, dictionary, comprehension, slicing.",
+          "error": "",
+          "attempt_count": 1,
+          "generation_skipped": false,
+          "ground_truth": "Basic Python trong module 1 bao gồm các nội dung nền tảng như biến, hàm, branching, vòng lặp for/while, list, tuple, dictionary và các bài tập nhập môn lập trình Python liên quan.",
+          "expected_source_notes": "Should cite Basic Python metadata/content and ML pipeline overview chunks.",
+          "tags": [
+            "notion",
+            "python",
+            "summary"
+          ],
+          "contexts": [
+            "1.2 Hệ sinh thái và Tư duy học tập\n- Hệ sinh thái đa dạng : Python có kho thư viện khổng lồ (Ecosystem). Trong lĩnh vực AI, các framework liên tục thay đổi (ví dụ: cộng đồng chuyển dịch từ TensorFlow sang PyTorch, Hugging Face). Do đó, cần có tư duy linh hoạt, sẵn sàng thích nghi và coi Python như một công cụ.\n\n- Tư duy học : Đừng cố gắng \"học thuộc lòng\" mọi cú pháp. Hãy học cách phân tích và \"ánh xạ\" tư duy toán học, logic rẽ nhánh vào máy tính. Kỹ năng lập trình chỉ thực sự lên tay khi bạn tự \"cắn răng\" suy nghĩ và giải quyết lỗi lầm (dành 2-3 tuần giải bài tập liên tục để hình thành thói quen).",
+            "Bài: M01W01 - Basic Python (String and Loops~Text preprocessing)\nWeek: \nDate: 2026-06-05\nModule: 1\nLecturer: Dr. Quang Vinh\nLabel: Toán Cơ Bản và Lập Trình Python\nTổng hợp: False",
+            "4. Thuật Toán\nCuối cùng là phần Thuật toán. Tuy nhiên ở module 1 này ta mới chỉ đang nhập môn lập trình Python, cụ thể là học về: biến, hàm,  for loop ,  while loop ,  list ,  tuple ,  set ,  dictionary ,  comprehension ,  slicing …\n\nCác bài tập nhỏ liên quan tới nội dung ML, DL. Đây sẽ là những nền tảng bước đệm để sau ta có thể học tốt và hiểu sâu về Thuật Toán và AI.",
+            "1. Kiến thức Python Cơ Bản\n- Biến và Kiểu dữ liệu : Python hỗ trợ các kiểu dữ liệu cơ bản như số nguyên (`int`), số thực (`float`), chuỗi (`str`), và giá trị đúng/sai (`bool`).\n\n- Cấu trúc điều khiển : Sử dụng `if`, `elif`, `else` để kiểm tra điều kiện; vòng lặp `for` để duyệt phần tử và `while` để lặp khi điều kiện còn đúng.\n\n- Hàm (Function) : Giúp đóng gói logic và tái sử dụng mã nguồn bằng từ khóa `def`.\n\n- Xử lý ngoại lệ : Sử dụng cấu trúc `try/except` để ngăn chương trình bị dừng đột ngột khi gặp lỗi (ví dụ: lỗi ép kiểu)."
+          ],
+          "source_ids": [
+            "37f57411-9086-8152-a76d-fdc4d33bc22c_lesson_content_chunk_2",
+            "notion_37f57411-9086-81e3-b954-f0f1f008fb08_metadata",
+            "37f57411-9086-8034-a3fe-cf6287e01726_lesson_content_chunk_5",
+            "37f57411-9086-817e-b344-ed39a359e589_lesson_content_chunk_0"
+          ],
+          "source_titles": [
+            "Notion:M01W01 - Basic Python (Branching~Rule-based Chatbot):heading=SECTION 1: INTRODUCTION (GIỚI THIỆU VỀ PYTHON) > 1.2 Hệ sinh thái và Tư duy học tập:id=37f57411-9086-8152-a76d-fdc4d33bc22c_lesson_content_chunk_2",
+            "Notion:M01W01 - Basic Python (String and Loops~Text preprocessing):heading=:id=notion_37f57411-9086-81e3-b954-f0f1f008fb08_metadata",
+            "Notion:[📝Sharing Cá Nhân] Tổng hợp các bài học đến module 1 week 2 theo ML pipeline:heading=[📝Sharing Cá Nhân] Tổng hợp các bài học đến Module 1 Week 2 theo ML Pipeline > 4. Thuật Toán:id=37f57411-9086-8034-a3fe-cf6287e01726_lesson_content_chunk_5",
+            "Notion:M01W01 - TA-Exercise:heading=1. Kiến thức Python Cơ Bản:id=37f57411-9086-817e-b344-ed39a359e589_lesson_content_chunk_0"
+          ],
+          "retrieval_debug": {
+            "retrieved_count": 20,
+            "reranked_count": 10,
+            "final_count": 4,
+            "rerank_enabled": true,
+            "mmr_enabled": true
+          },
+          "ragas": {
+            "faithfulness": 1.0,
+            "answer_relevancy": 0.7750651427782641,
+            "context_precision": 0.999999999975,
+            "context_recall": 1.0
+          }
+        }
+      ]
+    }
+  ],
+  "summary": [
+    {
+      "pipeline_name": "vector",
+      "pipeline_label": "Vector only",
+      "retrieval_mode": "vector",
+      "candidate_k": 20,
+      "rerank_enabled": false,
+      "mmr_enabled": false,
+      "question_count": 6,
+      "average_context_count": 4.0,
+      "average_source_count": 4.0,
+      "ragas_average": {
+        "faithfulness": 0.9583333333333334,
+        "answer_relevancy": 0.7245234886370047,
+        "context_precision": 0.9722222221912037,
+        "context_recall": 0.75
+      }
+    },
+    {
+      "pipeline_name": "hybrid_rrf_rerank_mmr",
+      "pipeline_label": "Hybrid RRF + Cohere Rerank + MMR",
+      "retrieval_mode": "hybrid_rrf",
+      "candidate_k": 20,
+      "rerank_enabled": true,
+      "mmr_enabled": true,
+      "question_count": 6,
+      "average_context_count": 4.0,
+      "average_source_count": 4.0,
+      "ragas_average": {
+        "faithfulness": 1.0,
+        "answer_relevancy": 0.7288925825636429,
+        "context_precision": 0.9999999999694444,
+        "context_recall": 1.0
+      }
+    }
+  ]
+}
