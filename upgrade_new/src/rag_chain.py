@@ -131,7 +131,7 @@ def generate_with_gemini(prompt: str) -> str:
 
     payload = {
         "contents": [{"role": "user", "parts": [{"text": prompt}]}],
-        "generationConfig": {"temperature": 0, "maxOutputTokens": 768},
+        "generationConfig": {"temperature": 0.2, "maxOutputTokens": 2048},
     }
 
     errors: list[str] = []
